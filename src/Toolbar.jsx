@@ -114,6 +114,7 @@ class Toolbar extends React.Component {
 
     createBtn()
     {
+        if(this.state.sorting || this.state.sorted) { return; }
         this.visgrnd.current.createBars(100);
         this.setState({
             sorted: false

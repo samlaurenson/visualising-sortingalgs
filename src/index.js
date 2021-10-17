@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Toolbar from './Toolbar.jsx';
+import VisualiserGround from './valuevisualiser.jsx';
 
+//<Toolbar />
+//<App />
+//<VisualiserGround />
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Toolbar />
   </React.StrictMode>,
   document.getElementById('root')
 );

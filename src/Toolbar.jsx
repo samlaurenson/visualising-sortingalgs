@@ -2,6 +2,7 @@ import React from 'react';
 import './toolbar.scss';
 import VisualiserGround from './valuevisualiser.jsx';
 import mergeAnimation from './mergesrt.jsx';
+import {quickSortAnimationLR, quickSortAnimationLL} from './quicksort.jsx';
 
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -13,8 +14,24 @@ class Toolbar extends React.Component {
         this.visgrnd = React.createRef();
         this.createBtn = this.createBtn.bind(this);
         this.mergeSort = this.mergeSort.bind(this);
+        this.quickSortLR = this.quickSortLR.bind(this);
+        this.quickSortLL = this.quickSortLL.bind(this);
         this.animateArray = this.animateArray.bind(this);
         this.validate = this.validate.bind(this);
+    }
+
+    quickSortLR()
+    {
+        if(this.state.sorting || this.state.sorted) { return; }
+        let animations = quickSortAnimationLR(this.visgrnd.current.state.bars);
+        this.animateArray(animations);
+    }
+
+    quickSortLL()
+    {
+        if(this.state.sorting || this.state.sorted) { return; }
+        let animations = quickSortAnimationLL(this.visgrnd.current.state.bars);
+        this.animateArray(animations);
     }
 
     validate(array, delay)
@@ -131,6 +148,8 @@ class Toolbar extends React.Component {
                 <div class="toolbar">
                     <div id="createValues" onClick={this.createBtn}>Create Values</div>
                     <div id="mergeSort" onClick={this.mergeSort}>Merge Sort</div>
+                    <div id="quickSortLR" onClick={this.quickSortLR}>Quick Sort (LR)</div>
+                    <div id="quickSortLL" onClick={this.quickSortLL}>Quick Sort (LL)</div>
                 </div>
                 <VisualiserGround ref={this.visgrnd} />
             </>

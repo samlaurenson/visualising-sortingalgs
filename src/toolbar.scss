@@ -4,10 +4,18 @@ body {
     align-items: flex-start;
 }
 
+body.dark {
+    background-color: #353430;
+}
+
 .toolbar {
     background-color:lightblue;
     height: 75px;
     width: auto;
+}
+
+.toolbar.dark {
+    background-color: #a58d0e;
 }
 
 #createValues {
@@ -28,6 +36,72 @@ body {
 
 #valRange {
     margin-right: 20px;
+    direction: rtl;
+}
+
+#speedContainer {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.sliderlight {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    background: #9b9696;
+    opacity: 0.8;
+    outline: none;
+    margin-left: 10px;
+    margin-right: 20px;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+
+    &::-webkit-slider-thumb {
+        width: 25px;
+        height:25px;
+        background-color: rgb(107, 199, 230);
+        cursor: pointer;
+    }
+
+    &::-moz-range-thumb {
+        width: 25px;
+        height:25px;
+        background-color: rgb(107, 199, 230);
+        cursor: pointer;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.sliderdark {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    margin-left: 10px;
+    margin-right: 20px;
+    background: #c7c0c0;
+    opacity: 0.8;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+
+    &::-webkit-slider-thumb {
+        width: 25px;
+        height:25px;
+        background-color: #eece2c;
+        cursor: pointer;
+    }
+
+    &::-moz-range-thumb {
+        width: 25px;
+        height:25px;
+        background-color: #eece2c;
+        cursor: pointer;
+    }
+
+    &:hover{
+        opacity: 1;
+    }
 }
 
 #mergeSort {
@@ -54,13 +128,36 @@ body {
     cursor: pointer;
 }
 
+#theme {
+    //display: inline-block;
+    float: right;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
 
 .bar{
+    background-color: red;
     width: 0.4vw;
     margin-left: 0.2vw;
     display: inline-block;
     bottom: 0vh;
 }
+
+.bar.dark {
+    background-color: #c7c4b4;
+}
+
+.bar.access {
+    background-color: blue !important;
+}
+
+.bar.complete {
+    background-color: green !important;
+}
+
 //margin: 150px auto auto 15%;
 //min-height: 1000px;
 .visual {

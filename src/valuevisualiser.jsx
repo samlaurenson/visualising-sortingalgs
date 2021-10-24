@@ -13,7 +13,7 @@ class VisualiserGround extends React.Component {
         new Promise(() => this.createBars(100));
     }
 
-    createBars(maxNum)
+    createBars(maxNum, theme)
     {
         let randomBars = [];
         let maxRandHeight = 0;
@@ -21,16 +21,21 @@ class VisualiserGround extends React.Component {
         for(let i = 0; randomBars.length < maxNum; ++i)
         {
             let randInt = Math.floor(Math.random() * maxRandHeight+1);
-            randomBars.push({class: "bar", id: i, height: randInt*0.7, backgroundColour:"red"}); //randInt*8.8
+            if(theme === "dark")
+            {
+                randomBars.push({class: "bar", id: i, height: randInt*0.7, backgroundColour:"#c7c4b4"});
+            } else { randomBars.push({class: "bar", id: i, height: randInt*0.7, backgroundColour:"red"}); }
+            //randomBars.push({class: "bar", id: i, height: randInt*0.7, backgroundColour:"red"}); //randInt*8.8 //, backgroundColour:"red"
         }
 
         this.setState({ bars: randomBars });
     }
 
+    //, backgroundColor: bar.backgroundColour
     render()
     {
         return (
-            <div class="visual">
+            <div id="vis" class="visual">
                 {this.state.bars.map(bar => <div id={bar.id} class={bar.class} style={{height: bar.height+"vh", backgroundColor: bar.backgroundColour}}></div>)}
             </div>
         );

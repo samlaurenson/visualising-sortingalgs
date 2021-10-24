@@ -10,7 +10,8 @@ body.dark {
 
 .toolbar {
     background-color:lightblue;
-    height: 75px;
+    //height: 75px;
+    height: 5.7vh;
     width: auto;
 }
 
@@ -19,51 +20,87 @@ body.dark {
 }
 
 #createValues {
-    margin-left: 10px;
-    margin-right: 20px;
-    margin-top: 20px;
+    //margin-left: 10px;
+    margin-left: 0.4vw;
+    //margin-right: 20px;
+    margin-right: 0.8vw;
+    //margin-top: 20px;
+    margin-top: 0.8vh;
     display: inline-block;
     cursor: pointer;
 }
 
 #arraySize {
     display: inline-block;
-    margin-left: 10px;
-    margin-top: 20px;
-    margin-right: 20px;
+    margin-left: 0.4vw;
+    //margin-right: 20px;
+    margin-right: 0.8vw;
+    //margin-top: 20px;
+    margin-top: 0.8vh;
     cursor: pointer;
 }
 
 #valRange {
-    margin-right: 20px;
+    //margin-right: 20px;
+    margin-right: 0.8vw;
     direction: rtl;
 }
 
 #speedContainer {
     display: inline-block;
-    margin-left: 10px;
-    margin-top: 20px;
-    margin-right: 20px;
+    margin-left: 0.4vw;
+    //margin-right: 20px;
+    margin-right: 0.8vw;
+    //margin-top: 20px;
+    margin-top: 0.8vh;
 }
 
 .sliderlight {
     -webkit-appearance: none;  /* Override default CSS styles */
-    background: #9b9696;
+    appearance: none;
+    background: transparent;
     opacity: 0.8;
     outline: none;
-    margin-left: 10px;
-    margin-right: 20px;
+    //margin-left: 10px;
+    margin-left: 0.4vw;
+    //margin-right: 20px;
+    margin-right: 0.8vw;
     -webkit-transition: .2s;
     transition: opacity .2s;
 
+    &::-webkit-slider-runnable-track {
+        width: auto;
+        //height: 5px;
+        height: 0.3vh;
+        background: #9b9696;
+        border: none;
+        border-radius: 3px;
+    }
+
     &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
         width: 25px;
         height:25px;
+        //width: 1vw;
+        //height: 2vh;
+        border-radius: 50%;
+        margin-top: -10px;
+        //margin-top: -0.8vh;
         background-color: rgb(107, 199, 230);
         cursor: pointer;
     }
 
+    &::-moz-range-track {
+        width: auto;
+        height: 5px;
+        background: #9b9696;
+        border: none;
+        border-radius: 3px;
+    }
+
     &::-moz-range-thumb {
+        border-radius: 50%;
         width: 25px;
         height:25px;
         background-color: rgb(107, 199, 230);
@@ -77,22 +114,45 @@ body.dark {
 
 .sliderdark {
     -webkit-appearance: none;  /* Override default CSS styles */
-    margin-left: 10px;
-    margin-right: 20px;
-    background: #c7c0c0;
+    //margin-left: 10px;
+    margin-left: 0.4vw;
+    //margin-right: 20px;
+    margin-right: 0.8vw;
+    background: transparent;
     opacity: 0.8;
     outline: none;
     -webkit-transition: .2s;
     transition: opacity .2s;
 
+    &::-webkit-slider-runnable-track {
+        width: auto;
+        height: 5px;
+        background: #c7c0c0;
+        border: none;
+        border-radius: 3px;
+    }
+
     &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
         width: 25px;
         height:25px;
+        border-radius: 50%;
+        margin-top: -10px;
         background-color: #eece2c;
         cursor: pointer;
     }
 
+    &::-moz-range-track {
+        width: auto;
+        height: 5px;
+        background: #c7c0c0;
+        border: none;
+        border-radius: 3px;
+    }
+
     &::-moz-range-thumb {
+        border-radius: 50%;
         width: 25px;
         height:25px;
         background-color: #eece2c;
@@ -106,34 +166,42 @@ body.dark {
 
 #mergeSort {
     display: inline-block;
-    margin-left: 10px;
-    margin-top: 20px;
-    margin-right: 20px;
+    margin-left: 0.4vw;
+    //margin-right: 20px;
+    margin-right: 0.8vw;
+    //margin-top: 20px;
+    margin-top: 0.8vh;
     cursor: pointer;
 }
 
 #quickSortLR {
     display: inline-block;
-    margin-left: 10px;
-    margin-top: 20px;
-    margin-right: 20px;
+    margin-left: 0.4vw;
+    //margin-right: 20px;
+    margin-right: 0.8vw;
+    //margin-top: 20px;
+    margin-top: 0.8vh;
     cursor: pointer;
 }
 
 #quickSortLL {
     display: inline-block;
-    margin-left: 10px;
-    margin-top: 20px;
-    margin-right: 20px;
+    margin-left: 0.4vw;
+    //margin-right: 20px;
+    margin-right: 0.8vw;
+    //margin-top: 20px;
+    margin-top: 0.8vh;
     cursor: pointer;
 }
 
 #theme {
     //display: inline-block;
     float: right;
-    margin-left: 10px;
-    margin-top: 20px;
-    margin-right: 20px;
+    margin-left: 0.4vw;
+    //margin-right: 20px;
+    margin-right: 0.8vw;
+    //margin-top: 20px;
+    margin-top: 0.8vh;
     cursor: pointer;
 }
 

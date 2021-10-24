@@ -6,6 +6,4 @@ part 2 in the thrilling algorithms series
 created this project because visualised sorting algorithms are theraputic
 also because learning how to use react somewhat properly could be a bonus
 
-only added in merge sort right now but might add a couple more later on
-
 i have never really touched css before so don't berate me too much :)

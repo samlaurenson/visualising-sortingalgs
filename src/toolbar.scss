@@ -55,6 +55,21 @@ body.dark {
     margin-top: 0.8vh;
 }
 
+#sizeContainer {
+    display: inline-block;
+    margin-left: 0.4vw;
+    //margin-right: 20px;
+    margin-right: 0.8vw;
+    //margin-top: 20px;
+    margin-top: 0.8vh;
+}
+
+#valRange {
+    //margin-right: 20px;
+    margin-right: 0.8vw;
+    //direction: rtl;
+}
+
 .sliderlight {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;

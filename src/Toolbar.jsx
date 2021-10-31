@@ -10,7 +10,7 @@ class Toolbar extends React.Component {
     constructor(props)
     {
         super(props);
-        this.state = { counter: 0, sorting: false, sorted: false, theme: "light", speed: 57 };
+        this.state = { counter: 0, sorting: false, sorted: false, theme: "light", speed: 57, length:100 };
         this.visgrnd = React.createRef();
         this.createBtn = this.createBtn.bind(this);
         this.mergeSort = this.mergeSort.bind(this);
@@ -182,10 +182,9 @@ class Toolbar extends React.Component {
                 });
             }
         }
-        this.visgrnd.current.createBars(100, this.state.theme);
+        this.visgrnd.current.createBars(this.state.length, this.state.theme);
         this.setState({
-            sorted: false,
-            length: 100
+            sorted: false
         });
     }
 
@@ -193,6 +192,27 @@ class Toolbar extends React.Component {
     {
         this.setState({ 
             speed: e.target.value
+        });
+    }
+
+    handleArrayInput(e)
+    {
+        if(this.state.sorting) { return; }
+        if(document.getElementById(this.visgrnd.current.state.bars[0].id).classList.contains("complete"))
+        {
+            for(let i = 0; i < this.visgrnd.current.state.bars.length; i++)
+            {
+                let b = document.getElementById(this.visgrnd.current.state.bars[i].id);
+                b.classList.toggle("complete");
+                this.setState({
+                    bars: this.visgrnd.current.state.bars
+                });
+            }
+        }
+        this.visgrnd.current.createBars(e.target.value, this.state.theme);
+        this.setState({
+            sorted: false,
+            length: e.target.value
         });
     }
     
@@ -208,6 +228,10 @@ class Toolbar extends React.Component {
                     <div id="speedContainer">
                         Speed:
                         <input id="valRange" class={`slider${this.state.theme}`} type="range" min="15" max="100" value={this.state.speed} onChange={(e) => {this.handleInput(e)}}/>
+                    </div>
+                    <div id="sizeContainer">
+                        Array Size:
+                        <input id="arraySize" class={`slider${this.state.theme}`} type="range" min="30" max="200" value={this.state.length} onChange={(e) => {this.handleArrayInput(e)}}/>
                     </div>
                     <div id="theme" onClick={this.themeSwap}>Theme</div>
                 </div>
